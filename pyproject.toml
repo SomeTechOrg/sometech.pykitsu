@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sometech.pykitsu"
+dynamic = ["version"]
+description = 'Modern Python Client for Kitsu Production Tracker'
+readme = "README.md"
+requires-python = ">=3.9"
+license = "GPL-3.0-or-later"
+keywords = []
+authors = [{ name = "Dee", email = "dee.sometech@gmail.com" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+dependencies = [
+    'rich',
+    'typing_extensions',
+    'httpx2',
+    'pydantic',
+    'python-dateutil'
+]
+
+[dependency-groups]
+dev = [
+    "openapi-generator-cli[jdk4py]>=7.17.0",
+]
+
+[project.urls]
+Documentation = "https://github.com/SomeTechOrg/sometech.pykitsu#readme"
+Issues = "https://github.com/SomeTechOrg/sometech.pykitsu/issues"
+Source = "https://github.com/SomeTechOrg/sometech.pykitsu"
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.0.0"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "./src/sometech/pykitsu/_version.py"
+
+[tool.hatch.build]
+# this is needed bc it is otherwise not included in the build:
+artifacts = ['_version.py']
+packages = ["src/sometech"]
+
+[tool.hatch.build.targets.wheel]
+# this is needed bc it is otherwise not included in the build:
+artifacts = ['_version.py']
+packages = ["src/sometech"]

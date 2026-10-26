@@ -1,0 +1,33 @@
+# CreateOrganisation201Response
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **UUID** |  | [optional] 
+**name** | **str** |  | [optional] 
+**hours_by_day** | **float** |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
+
+## Example
+
+```python
+from sometech.pykitsu._client.models.create_organisation201_response import CreateOrganisation201Response
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of CreateOrganisation201Response from a JSON string
+create_organisation201_response_instance = CreateOrganisation201Response.from_json(json)
+# print the JSON string representation of the object
+print(CreateOrganisation201Response.to_json())
+
+# convert the object into a dict
+create_organisation201_response_dict = create_organisation201_response_instance.to_dict()
+# create an instance of CreateOrganisation201Response from a dict
+create_organisation201_response_from_dict = CreateOrganisation201Response.from_dict(create_organisation201_response_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

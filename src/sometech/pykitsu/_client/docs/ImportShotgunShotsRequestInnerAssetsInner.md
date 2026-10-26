@@ -1,0 +1,29 @@
+# ImportShotgunShotsRequestInnerAssetsInner
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
+
+## Example
+
+```python
+from sometech.pykitsu._client.models.import_shotgun_shots_request_inner_assets_inner import ImportShotgunShotsRequestInnerAssetsInner
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ImportShotgunShotsRequestInnerAssetsInner from a JSON string
+import_shotgun_shots_request_inner_assets_inner_instance = ImportShotgunShotsRequestInnerAssetsInner.from_json(json)
+# print the JSON string representation of the object
+print(ImportShotgunShotsRequestInnerAssetsInner.to_json())
+
+# convert the object into a dict
+import_shotgun_shots_request_inner_assets_inner_dict = import_shotgun_shots_request_inner_assets_inner_instance.to_dict()
+# create an instance of ImportShotgunShotsRequestInnerAssetsInner from a dict
+import_shotgun_shots_request_inner_assets_inner_from_dict = ImportShotgunShotsRequestInnerAssetsInner.from_dict(import_shotgun_shots_request_inner_assets_inner_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

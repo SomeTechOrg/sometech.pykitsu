@@ -1,0 +1,3480 @@
+{
+  "linked": [
+    {
+      "operation": "get /data/assets/{asset_id}/assets",
+      "status": "200",
+      "model": "Asset",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id"
+      ]
+    },
+    {
+      "operation": "get /data/assets/{asset_id}/task-types",
+      "status": "200",
+      "model": "TaskType",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/assets/shared-used",
+      "status": "200",
+      "model": "Asset",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "is_shared"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/attachment-files",
+      "status": "200",
+      "model": "AttachmentFile",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "project_id"
+      ]
+    },
+    {
+      "operation": "post /data/task-type-links",
+      "status": "201",
+      "model": "Task",
+      "list": false,
+      "via": "summary",
+      "added_fields": [
+        "id"
+      ]
+    },
+    {
+      "operation": "post /data/task-status-links",
+      "status": "201",
+      "model": "Task",
+      "list": false,
+      "via": "summary",
+      "added_fields": [
+        "roles_for_board"
+      ]
+    },
+    {
+      "operation": "put /data/comments/{instance_id}",
+      "status": "200",
+      "model": "Comment",
+      "list": false,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/news",
+      "status": "200",
+      "model": "News",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "operation": "get /data/events/login-logs/last",
+      "status": "200",
+      "model": "LoginLog",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "created_at"
+      ]
+    },
+    {
+      "operation": "get /data/tasks/{task_id}/working-files",
+      "status": "200",
+      "model": "WorkingFile",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "updated_at"
+      ]
+    },
+    {
+      "operation": "post /data/asset-instances/{asset_instance_id}/entities/{temporal_entity_id}/output-files/new",
+      "status": "201",
+      "model": "OutputFile",
+      "list": false,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "operation": "get /data/asset-instances/{asset_instance_id}/entities/{temporal_entity_id}/output-types/{output_type_id}/output-files",
+      "status": "200",
+      "model": "OutputFile",
+      "list": true,
+      "via": "path",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/working-files",
+      "status": "200",
+      "model": "WorkingFile",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/output-types/{output_type_id}/output-files",
+      "status": "200",
+      "model": "OutputFile",
+      "list": true,
+      "via": "path",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/output-files",
+      "status": "200",
+      "model": "OutputFile",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/asset-instances/{asset_instance_id}/output-files",
+      "status": "200",
+      "model": "OutputFile",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /import/csv/persons",
+      "status": "201",
+      "model": "Person",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id"
+      ]
+    },
+    {
+      "operation": "post /import/csv/projects/{project_id}/assets",
+      "status": "201",
+      "model": "Asset",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /import/csv/projects/{project_id}/shots",
+      "status": "201",
+      "model": "Shot",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "nb_frames"
+      ]
+    },
+    {
+      "operation": "post /import/csv/projects/{project_id}/task-types/{task_type_id}/estimations",
+      "status": "201",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /import/csv/projects/{project_id}/episodes/{episode_id}/task-types/{task_type_id}/estimations",
+      "status": "201",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/time-spents",
+      "status": "200",
+      "model": "TimeSpent",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id"
+      ]
+    },
+    {
+      "operation": "get /data/persons/{person_id}/time-spents/{date}",
+      "status": "200",
+      "model": "TimeSpent",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/shots",
+      "status": "200",
+      "model": "Shot",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/shots/all",
+      "status": "200",
+      "model": "Shot",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/shots/{shot_id}/tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "assignees"
+      ]
+    },
+    {
+      "operation": "get /data/scenes/{scene_id}/tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/episodes",
+      "status": "200",
+      "model": "Episode",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "status"
+      ]
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}",
+      "status": "200",
+      "model": "Episode",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}/shots",
+      "status": "200",
+      "model": "Shot",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}/sequences",
+      "status": "200",
+      "model": "Sequence",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id"
+      ]
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}/tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}/shot-tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}/asset-tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/sequences",
+      "status": "200",
+      "model": "Sequence",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/sequences/{sequence_id}",
+      "status": "200",
+      "model": "Sequence",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/sequences/{sequence_id}/shots",
+      "status": "200",
+      "model": "Shot",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/sequences/{sequence_id}/scenes",
+      "status": "200",
+      "model": "Sequence",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/sequences/{sequence_id}/tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/sequences/{sequence_id}/shot-tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/shots",
+      "status": "200",
+      "model": "Shot",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/sequences",
+      "status": "201",
+      "model": "Sequence",
+      "list": false,
+      "via": "summary",
+      "added_fields": [
+        "episode_id"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/episodes",
+      "status": "200",
+      "model": "Episode",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/episodes",
+      "status": "201",
+      "model": "Episode",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/related-tasks/{task_type_id}",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/done-tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/task-types/{task_type_id}/tasks",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "put /actions/tasks/{task_id}/assign",
+      "status": "200",
+      "model": "Task",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "put /actions/persons/{person_id}/assign",
+      "status": "200",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /actions/tasks/{task_id}/time-spents/{date}",
+      "status": "200",
+      "model": "TimeSpent",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "created_at"
+      ]
+    },
+    {
+      "operation": "get /actions/tasks/{task_id}/time-spents",
+      "status": "200",
+      "model": "TimeSpent",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /actions/tasks/{task_id}/time-spents/{date}/persons/{person_id}",
+      "status": "201",
+      "model": "TimeSpent",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "delete /actions/tasks/{task_id}/time-spents/{date}/persons/{person_id}",
+      "status": "201",
+      "model": "TimeSpent",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /actions/tasks/{task_id}/time-spents/{date}/persons/{person_id}/add",
+      "status": "201",
+      "model": "TimeSpent",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "put /actions/tasks/{task_id}/to-review",
+      "status": "200",
+      "model": "Task",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/task-types/{task_type_id}/shots/create-tasks",
+      "status": "201",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/task-types/{task_type_id}/assets/create-tasks",
+      "status": "201",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/task-types/{task_type_id}/edits/create-tasks",
+      "status": "201",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/task-types/{task_type_id}/concepts/create-tasks",
+      "status": "201",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/task-types/{task_type_id}/create-tasks/{entity_type}/",
+      "status": "201",
+      "model": "Task",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/user/assets/{asset_id}/task-types",
+      "status": "200",
+      "model": "TaskType",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "operation": "get /data/user/shots/{shot_id}/task-types",
+      "status": "200",
+      "model": "TaskType",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/user/scenes/{scene_id}/task-types",
+      "status": "200",
+      "model": "TaskType",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/user/sequences/{sequence_id}/task-types",
+      "status": "200",
+      "model": "TaskType",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/user/notifications",
+      "status": "200",
+      "model": "Notification",
+      "list": true,
+      "via": "summary",
+      "added_fields": [
+        "id",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "operation": "get /data/user/notifications/{notification_id}",
+      "status": "200",
+      "model": "Notification",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "put /data/user/notifications/{notification_id}",
+      "status": "200",
+      "model": "Notification",
+      "list": false,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/edits/{edit_id}/task-types",
+      "status": "200",
+      "model": "TaskType",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    },
+    {
+      "operation": "get /data/concepts/{concept_id}/task-types",
+      "status": "200",
+      "model": "TaskType",
+      "list": true,
+      "via": "summary",
+      "added_fields": []
+    }
+  ],
+  "extended_models": {
+    "Asset": [
+      "id",
+      "is_shared"
+    ],
+    "AttachmentFile": [
+      "id",
+      "project_id"
+    ],
+    "Comment": [
+      "created_at",
+      "id",
+      "updated_at"
+    ],
+    "Episode": [
+      "id",
+      "status"
+    ],
+    "LoginLog": [
+      "created_at",
+      "id"
+    ],
+    "News": [
+      "created_at",
+      "id",
+      "updated_at"
+    ],
+    "Notification": [
+      "created_at",
+      "id",
+      "updated_at"
+    ],
+    "OutputFile": [
+      "created_at",
+      "id",
+      "updated_at"
+    ],
+    "Person": [
+      "id"
+    ],
+    "Sequence": [
+      "episode_id",
+      "id"
+    ],
+    "Shot": [
+      "id",
+      "nb_frames"
+    ],
+    "Task": [
+      "assignees",
+      "id",
+      "roles_for_board"
+    ],
+    "TaskType": [
+      "created_at",
+      "id",
+      "updated_at"
+    ],
+    "TimeSpent": [
+      "created_at",
+      "id"
+    ],
+    "WorkingFile": [
+      "id",
+      "updated_at"
+    ]
+  },
+  "unlinked": [
+    {
+      "operation": "get /data/asset-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/asset-types/{asset_type_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests AssetType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/assets",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Asset but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/assets/all",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Asset but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/assets/with-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/assets/{asset_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Asset but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/assets/{asset_id}/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/assets/{asset_id}/cast-in",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Asset but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/assets/{asset_id}/casting",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Asset but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/assets/{asset_id}/casting",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Asset but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/assets/{asset_id}/shot-asset-instances",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetInstance but shape rejects it (type conflict on number)",
+      "closest_by_shape": [
+        "AssetInstance (60%)"
+      ]
+    },
+    {
+      "operation": "get /data/assets/{asset_id}/scene-asset-instances",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetInstance but shape rejects it (type conflict on number)",
+      "closest_by_shape": [
+        "AssetInstance (80%)"
+      ]
+    },
+    {
+      "operation": "get /data/assets/{asset_id}/asset-asset-instances",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetInstance but shape rejects it (type conflict on number)",
+      "closest_by_shape": [
+        "AssetInstance (80%)"
+      ]
+    },
+    {
+      "operation": "post /data/assets/{asset_id}/asset-asset-instances",
+      "status": "201",
+      "list": false,
+      "why": "name suggests AssetInstance but shape rejects it (type conflict on number)",
+      "closest_by_shape": [
+        "AssetInstance (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/asset-types/{asset_type_id}/assets",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Asset but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/asset-types/{asset_type_id}/assets/new",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Asset but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/asset-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": [
+        "Task (67%)",
+        "Shot (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/shots/{shot_id}/asset-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/assets",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Asset but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/assets/share",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Asset but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/assets/share",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Asset but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/asset-types/{asset_type_id}/assets/share",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Asset but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/episodes/{episode_id}/assets/shared-used",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Episode but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/entities/{entity_id}/casting",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/projects/{project_id}/entities/{entity_id}/casting",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/asset-types/{asset_type_id}/casting",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetType but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/episodes/casting",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Episode but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/sequences/{sequence_id}/casting",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Shot but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/episodes/{episode_id}/sequences/all/casting",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Shot but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/sequences/all/casting",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Shot but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/entity-links",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/scenes/{scene_id}/asset-instances",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetInstance but shape rejects it (type conflict on number)",
+      "closest_by_shape": [
+        "AssetInstance (80%)"
+      ]
+    },
+    {
+      "operation": "post /data/scenes/{scene_id}/asset-instances",
+      "status": "201",
+      "list": false,
+      "why": "name suggests AssetInstance but shape rejects it (type conflict on number)",
+      "closest_by_shape": [
+        "AssetInstance (80%)"
+      ]
+    },
+    {
+      "operation": "get /data/scenes/{scene_id}/camera-instances",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": [
+        "AssetInstance (60%)"
+      ]
+    },
+    {
+      "operation": "get /data/shots/{shot_id}/asset-instances",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetInstance but shape rejects it (type conflict on number)",
+      "closest_by_shape": [
+        "AssetInstance (60%)"
+      ]
+    },
+    {
+      "operation": "post /data/shots/{shot_id}/asset-instances",
+      "status": "201",
+      "list": false,
+      "why": "name suggests AssetInstance but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/chat",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/chat/messages",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/entities/{entity_id}/chat/messages",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/chat/messages/{chat_message_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/tasks/{task_id}/comments/{comment_id}/ack",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Comment but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/tasks/{task_id}/comments/{comment_id}/reply",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Comment but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/tasks/{task_id}/comments/{comment_id}/add-attachment",
+      "status": "201",
+      "list": true,
+      "why": "name suggests Comment but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": [
+        "AttachmentFile (80%)"
+      ]
+    },
+    {
+      "operation": "get /data/tasks/{task_id}/attachment-files",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AttachmentFile but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/tasks/{task_id}/comment",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Comment but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/tasks/comment-many",
+      "status": "201",
+      "list": true,
+      "why": "name suggests Comment but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/persons",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (coverage 45% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/persons/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (coverage 45% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/persons/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (coverage 42% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (coverage 38% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (coverage 38% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/projects/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (coverage 38% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/project-status",
+      "status": "201",
+      "list": false,
+      "why": "name suggests ProjectStatus but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/project-status/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests ProjectStatus but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/project-status/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests ProjectStatus but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/entity-types",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entity-types/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/entity-types/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/entities",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entities/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/entities/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": [
+        "Task (75%)",
+        "Shot (75%)"
+      ]
+    },
+    {
+      "operation": "post /data/task-types",
+      "status": "201",
+      "list": false,
+      "why": "name suggests TaskType but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/task-types/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TaskType but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/task-types/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TaskType but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/task-status",
+      "status": "201",
+      "list": false,
+      "why": "name suggests TaskStatus but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/task-status/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TaskStatus but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/task-status/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TaskStatus but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/tasks",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/tasks/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/tasks/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (coverage 56% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/departments",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Department but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/departments/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Department but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/departments/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Department but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/organisations",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Organisation but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/organisations/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Organisation but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/organisations/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Organisation but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/file-status/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests FileStatus but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/file-status/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests FileStatus but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/file-status/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests FileStatus but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/softwares",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Software but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/softwares/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Software but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/softwares/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Software but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/hardware-items",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/hardware-items/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/hardware-items/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/output-files",
+      "status": "201",
+      "list": false,
+      "why": "name suggests OutputFile but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/output-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests OutputFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/output-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests OutputFile but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/output-types",
+      "status": "201",
+      "list": false,
+      "why": "name suggests OutputType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/output-types/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests OutputType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/output-types/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests OutputType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/preview-files",
+      "status": "201",
+      "list": false,
+      "why": "name suggests PreviewFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/preview-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests PreviewFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/preview-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests PreviewFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/working-files",
+      "status": "201",
+      "list": false,
+      "why": "name suggests WorkingFile but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/working-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests WorkingFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/working-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests WorkingFile but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/attachment-files",
+      "status": "201",
+      "list": false,
+      "why": "name suggests AttachmentFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/attachment-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests AttachmentFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/attachment-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests AttachmentFile but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/comments",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Comment but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/comments/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Comment but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/time-spents/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/time-spents/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/time-spents/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/day-offs/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests DayOff but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/day-offs/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests DayOff but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/day-offs/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests DayOff but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/custom-actions/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests CustomAction but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/custom-actions/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests CustomAction but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/custom-actions/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests CustomAction but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/status-automations/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests StatusAutomation but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/status-automations/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests StatusAutomation but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/status-automations/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests StatusAutomation but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/asset-instances/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests AssetInstance but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/asset-instances/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests AssetInstance but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/asset-instances/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests AssetInstance but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/playlists/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Playlist but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/playlists/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Playlist but shape rejects it (type conflict on shots)",
+      "closest_by_shape": [
+        "Playlist (62%)"
+      ]
+    },
+    {
+      "operation": "put /data/playlists/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Playlist but shape rejects it (type conflict on shots)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/events/",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Event but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/events/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Event but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/events/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Event but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/events/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Event but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/notifications/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Notification but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/notifications/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Notification but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/notifications/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Notification but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/search-filters/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests SearchFilter but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/search-filters/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests SearchFilter but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/search-filters/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests SearchFilter but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/search-filter-groups/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests SearchFilter but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/search-filter-groups/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests SearchFilter but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/search-filter-groups/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests SearchFilter but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/schedule-items/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests ScheduleItem but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/schedule-items/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests ScheduleItem but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/schedule-items/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests ScheduleItem but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/news/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests News but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/news/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests News but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/news/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests News but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/milestones/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Milestone but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/milestones/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Milestone but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/milestones/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Milestone but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/metadata-descriptors/",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Metadata but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/metadata-descriptors/",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Metadata but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/metadata-descriptors/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Metadata but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/metadata-descriptors/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Metadata but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/subscriptions/",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/subscriptions/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/subscriptions/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/entity-links/",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entity-links/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/entity-links/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/chats/",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/chats/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/chats/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/chat-messages/",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/chat-messages/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/chat-messages/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/preview-background-files",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/preview-background-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/preview-background-files/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/studios",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Studio but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/studios/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Studio but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/studios/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Studio but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/salary-scales",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/salary-scales",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/salary-scales/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/salary-scales/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/plugins/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/plugins/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/plugins",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/production-schedule-versions",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/production-schedule-versions/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/production-schedule-versions/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/production-schedule-version-task-links/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/production-schedule-version-task-links/{instance_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/production-schedule-version-task-links",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/departments/{department_id}/software-licenses",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Department but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/departments/{department_id}/software-licenses/{software_id}",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Software but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/departments/{department_id}/hardware-items",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Department but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/departments/{department_id}/hardware-items/{hardware_item_id}",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Department but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/preview-files",
+      "status": "200",
+      "list": true,
+      "why": "name suggests PreviewFile but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": [
+        "WorkingFile (71%)"
+      ]
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/time-spents",
+      "status": "200",
+      "list": true,
+      "why": "name suggests TimeSpent but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/entities-linked/with-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Shot (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/events/last",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Event but shape rejects it (type conflict on data)",
+      "closest_by_shape": [
+        "Event (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/files/{file_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": [
+        "WorkingFile (71%)"
+      ]
+    },
+    {
+      "operation": "post /data/tasks/{task_id}/working-files/new",
+      "status": "201",
+      "list": false,
+      "why": "name suggests WorkingFile but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/tasks/{task_id}/working-file-path",
+      "status": "200",
+      "list": false,
+      "why": "name suggests WorkingFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "WorkingFile (100%)",
+        "PreviewFile (100%)"
+      ]
+    },
+    {
+      "operation": "post /data/asset-instances/{asset_instance_id}/entities/{temporal_entity_id}/output-files/next-revision",
+      "status": "200",
+      "list": false,
+      "why": "name suggests OutputFile but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/asset-instances/{asset_instance_id}/entities/{temporal_entity_id}/output-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests OutputType but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/asset-instances/{asset_instance_id}/entities/{temporal_entity_id}/output-file-path",
+      "status": "200",
+      "list": false,
+      "why": "name suggests OutputFile but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/entities/{entity_id}/output-files/new",
+      "status": "201",
+      "list": false,
+      "why": "name suggests OutputFile but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/entities/{entity_id}/output-files/next-revision",
+      "status": "200",
+      "list": false,
+      "why": "name suggests OutputFile but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/entities/{entity_id}/output-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests OutputType but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/output-files",
+      "status": "200",
+      "list": true,
+      "why": "name suggests OutputFile but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/entities/{entity_id}/output-file-path",
+      "status": "200",
+      "list": false,
+      "why": "name suggests OutputFile but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/entities/guess_from_path",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/working-files/{working_file_id}/file",
+      "status": "201",
+      "list": false,
+      "why": "name suggests WorkingFile but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/set-file-tree",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (type conflict on file_tree)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /actions/working-files/{working_file_id}/comment",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Comment but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /actions/working-files/{working_file_id}/modified",
+      "status": "200",
+      "list": false,
+      "why": "name suggests WorkingFile but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/persons",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Person but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/projects",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (type conflict on data)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/episodes",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Episode but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/sequences",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Sequence but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/shots",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Shot but shape rejects it (type conflict on data)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/scenes",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/assets",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Asset but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/steps",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/status",
+      "status": "200",
+      "list": true,
+      "why": "name suggests TaskStatus but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/versions",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/notes",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /import/shotgun/errors",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/errors",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/projectconnections",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "delete /import/shotgun/errors/{error_id}",
+      "status": "204",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/project",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/person",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/shot",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Shot but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/scene",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/episode",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Episode but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/sequence",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Sequence but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/asset",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Asset but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/projectconnection",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/step",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/status",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TaskStatus but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/task",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/note",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/shotgun/remove/version",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/csv/projects/{project_id}/edits",
+      "status": "201",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": [
+        "Shot (80%)",
+        "Sequence (80%)"
+      ]
+    },
+    {
+      "operation": "post /import/csv/projects/{project_id}/casting",
+      "status": "201",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/otio/projects/{project_id}",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/otio/projects/{project_id}/episodes/{episode_id}",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Episode but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/kitsu/comments",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Comment but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/kitsu/entities",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/kitsu/entity-links",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/kitsu/projects",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /import/kitsu/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /status",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /status/influx",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /status/resources",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /status/test-event",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Event but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /stats",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /config",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/news",
+      "status": "200",
+      "list": false,
+      "why": "name suggests News but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/news",
+      "status": "200",
+      "list": false,
+      "why": "name suggests News but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/news/{news_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests News but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/desktop-login-logs",
+      "status": "200",
+      "list": true,
+      "why": "name suggests DesktopLoginLog but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "TimeSpent (67%)",
+        "DesktopLoginLog (67%)"
+      ]
+    },
+    {
+      "operation": "post /data/persons/{person_id}/desktop-login-logs",
+      "status": "201",
+      "list": false,
+      "why": "name suggests DesktopLoginLog but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "TimeSpent (67%)",
+        "DesktopLoginLog (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/persons/{person_id}/day-offs/{date}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests DayOff but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/time-spents/year/{year}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/time-spents/month/{year}/{month}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/time-spents/week/{year}/{week}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/persons/{person_id}/time-spents/day/{year}/{month}/{day}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /actions/persons/{person_id}/invite",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/persons/{person_id}/departments/add",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Department but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/persons/{person_id}/change-password",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "delete /actions/persons/{person_id}/disable-two-factor-authentication",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/playlists",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Playlist but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Task (67%)",
+        "Shot (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/playlists/all",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Playlist but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Task (67%)",
+        "Shot (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/episodes/{episode_id}/playlists",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Playlist but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Playlist (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/playlists/{playlist_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Playlist but shape rejects it (type conflict on shots)",
+      "closest_by_shape": [
+        "Playlist (75%)"
+      ]
+    },
+    {
+      "operation": "get /data/playlists/{playlist_id}/jobs/{build_job_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests BuildJob but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/build-jobs",
+      "status": "200",
+      "list": true,
+      "why": "name suggests BuildJob but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/playlists/{playlist_id}/build/mp4",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Playlist but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/playlists/temp",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Playlist but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/playlists/{playlist_id}/notify-clients",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Playlist but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": [
+        "BuildJob (100%)"
+      ]
+    },
+    {
+      "operation": "post /data/playlists/{playlist_id}/share/{token}/invite",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Playlist but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/open",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Project (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/projects/all",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Project (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/team",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": [
+        "Person (75%)"
+      ]
+    },
+    {
+      "operation": "post /data/projects/{project_id}/team",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/settings/asset-types",
+      "status": "201",
+      "list": false,
+      "why": "name suggests AssetType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/settings/task-types",
+      "status": "201",
+      "list": false,
+      "why": "name suggests TaskType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/settings/task-status",
+      "status": "201",
+      "list": false,
+      "why": "name suggests TaskStatus but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/settings/status-automations",
+      "status": "201",
+      "list": false,
+      "why": "name suggests StatusAutomation but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/settings/preview-background-files",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/metadata-descriptors",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Metadata but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/metadata-descriptors/reorder",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Metadata but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/budgets",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/budgets/{budget_id}/entries",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/shots/with-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/shots/{shot_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Shot but shape rejects it (type conflict on data)",
+      "closest_by_shape": [
+        "Shot (67%)",
+        "Sequence (67%)"
+      ]
+    },
+    {
+      "operation": "put /data/shots/{shot_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Shot but shape rejects it (type conflict on data)",
+      "closest_by_shape": [
+        "Shot (67%)",
+        "Sequence (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/shots/{shot_id}/assets",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Asset but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Shot (67%)",
+        "Asset (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/shots/{shot_id}/task-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests TaskType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/shots/{shot_id}/versions",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Shot but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/scenes/all",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": [
+        "Task (67%)",
+        "Shot (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/scenes/with-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/scenes/{scene_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": [
+        "Task (67%)",
+        "Shot (67%)"
+      ]
+    },
+    {
+      "operation": "get /data/scenes/{scene_id}/task-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests TaskType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/scenes/{scene_id}/shots",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Shot but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Task (67%)",
+        "Shot (67%)"
+      ]
+    },
+    {
+      "operation": "post /data/scenes/{scene_id}/shots",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Shot but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/episodes/with-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}/task-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests TaskType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/sequences/with-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/sequences/{sequence_id}/task-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests TaskType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/shots",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Shot but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/scenes",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": [
+        "Shot (75%)",
+        "Sequence (75%)"
+      ]
+    },
+    {
+      "operation": "post /data/projects/{project_id}/scenes",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": [
+        "Shot (75%)",
+        "Sequence (75%)"
+      ]
+    },
+    {
+      "operation": "get /data/projects/{project_id}/sequences",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Sequence but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "Playlist (75%)"
+      ]
+    },
+    {
+      "operation": "post /actions/projects/{project_id}/task-types/{task_type_id}/set-shot-nb-frames",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Shot but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/tasks/open-tasks",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (type conflict on data)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/tasks/{task_id}/comments",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Comment but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/tasks/{task_id}/comments/{comment_id}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Comment but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/tasks/{task_id}/previews",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/tasks/{task_id}/full",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (coverage 56% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/comments",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Comment but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/notifications",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Notification but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/preview-files",
+      "status": "200",
+      "list": false,
+      "why": "name suggests PreviewFile but shape rejects it (type conflict on data)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/subscriptions",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/tasks",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (type conflict on data)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/persons/task-dates",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/tasks/{task_id}/comments/{comment_id}/add-preview",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/tasks/{task_id}/comments/{comment_id}/preview-files/{preview_file_id}",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Comment but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": [
+        "WorkingFile (60%)",
+        "Notification (60%)"
+      ]
+    },
+    {
+      "operation": "put /actions/tasks/{task_id}/set-main-preview",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/playlists/preview-files/running",
+      "status": "200",
+      "list": true,
+      "why": "name suggests PreviewFile but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /pictures/preview-files/{instance_id}",
+      "status": "201",
+      "list": false,
+      "why": "name suggests PreviewFile but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": [
+        "PreviewFile (67%)"
+      ]
+    },
+    {
+      "operation": "post /pictures/thumbnails/organisations/{instance_id}",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Organisation but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /pictures/thumbnails/organisations/{instance_id}.png",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Organisation but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /pictures/thumbnails/persons/{instance_id}",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /pictures/thumbnails/persons/{instance_id}.png",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Person but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /pictures/thumbnails/projects/{instance_id}",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /pictures/thumbnails/projects/{instance_id}.png",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Project but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /pictures/preview-background-files/{instance_id}",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": [
+        "PreviewFile (67%)"
+      ]
+    },
+    {
+      "operation": "post /pictures/thumbnails/preview-background-files/{instance_id}.png",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /actions/preview-files/{preview_file_id}/set-main-preview",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /actions/preview-files/{preview_file_id}/update-position",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /actions/preview-files/{preview_file_id}/update-annotations",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/context",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/assets/{asset_id}/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/shots/{shot_id}/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/scenes/{scene_id}/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/sequences/{sequence_id}/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/projects/open",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (type conflict on fps)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/projects/{project_id}/asset-types",
+      "status": "200",
+      "list": true,
+      "why": "name suggests AssetType but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/projects/{project_id}/asset-types/{asset_type_id}/assets",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Asset but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/projects/{project_id}/sequences",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Sequence but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/projects/{project_id}/episodes",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Episode but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/sequences/{sequence_id}/shots",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Shot but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/sequences/{sequence_id}/scenes",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Sequence but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/tasks-to-check",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/done-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/filters",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/user/filters",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/user/filters/{filter_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/filter-groups",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/user/filter-groups",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/filter-groups/{filter_group_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "put /data/user/filter-groups/{filter_group_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/desktop-login-logs",
+      "status": "200",
+      "list": true,
+      "why": "name suggests DesktopLoginLog but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/user/desktop-login-logs",
+      "status": "201",
+      "list": false,
+      "why": "name suggests DesktopLoginLog but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/time-spents",
+      "status": "200",
+      "list": true,
+      "why": "name suggests TimeSpent but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/time-spents/{date}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (only 1 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/tasks/{task_id}/time-spents/{date}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests TimeSpent but shape rejects it (coverage 57% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/day-offs/{date}",
+      "status": "200",
+      "list": false,
+      "why": "name suggests DayOff but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/user/chats",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/user/chats/{entity_id}/join",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/user/tasks/{task_id}/subscribe",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Task but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/user/sequences/{sequence_id}/task-types/{task_type_id}/subscribe",
+      "status": "201",
+      "list": false,
+      "why": "name suggests Sequence but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /actions/user/notifications/mark-all-as-read",
+      "status": "200",
+      "list": false,
+      "why": "name suggests Notification but shape rejects it (only 0 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/edits",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/edits/all",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/edits/with-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 33% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/edits/{edit_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/edits/{edit_id}/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/edits/{edit_id}/versions",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}/edits",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Episode but shape rejects it (coverage 43% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/episodes/{episode_id}/edit-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/edits",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/edits",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/search",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/concepts",
+      "status": "200",
+      "list": true,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/concepts/with-tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 33% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/concepts/{concept_id}",
+      "status": "200",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/concepts/{concept_id}/tasks",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Task but shape rejects it (coverage 50% below 60%)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "get /data/projects/{project_id}/concepts",
+      "status": "200",
+      "list": true,
+      "why": "name suggests Project but shape rejects it (only 2 shared properties)",
+      "closest_by_shape": []
+    },
+    {
+      "operation": "post /data/projects/{project_id}/concepts",
+      "status": "201",
+      "list": false,
+      "why": "no model name found in summary or path",
+      "closest_by_shape": []
+    }
+  ],
+  "models_still_unused": [
+    "AssetInstance",
+    "AssetType",
+    "BuildJob",
+    "CustomAction",
+    "DataImportError",
+    "DayOff",
+    "Department",
+    "DesktopLoginLog",
+    "Event",
+    "FileStatus",
+    "Metadata",
+    "Milestone",
+    "Organisation",
+    "OutputType",
+    "Playlist",
+    "PreviewFile",
+    "Project",
+    "ProjectStatus",
+    "ScheduleItem",
+    "SearchFilter",
+    "Software",
+    "StatusAutomation",
+    "Studio",
+    "SubscriptionToNotifications",
+    "TaskStatus"
+  ]
+}

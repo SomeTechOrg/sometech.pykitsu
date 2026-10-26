@@ -1,0 +1,6 @@
+projectName: pykitsu
+packageName: sometech.pykitsu._client
+packageVersion: 1.0.36
+generateSourceCodeOnly: true
+library: httpx2
+#lazyImports: true
