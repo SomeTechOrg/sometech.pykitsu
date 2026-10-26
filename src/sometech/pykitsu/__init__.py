@@ -10,19 +10,50 @@ from . import _client
 from ._client.models.person import Person
 
 
+class Callbacks:
+    def on_authenticate(self, autenticated: bool):
+        pass
+
+    def on_logout(self):
+        pass
+
+class _LogOutCommand:
+    def __init__(self, pykitsu: PyKitsu, client):
+        self._pykitsu = pykitsu
+        self._client = client
+
+    async def __call__(self):
+        await self._pykitsu._on_disconnect(self._client)
+        self._pykitsu.clear_access_token_cache()
+        self._pykitsu._emit_on_logout()
+
 class PyKitsu:
     userinfo: Person|None
     projects : _client.ProjectsApi
     assets : _client.AssetsApi
     exports : _client.ExportApi
+    logout : _LogOutCommand
+
 
     def __init__(self, host:str, access_token_cache_file: Path | str|None):
+        self._callbacks: list[Callbacks] = []
+
         if access_token_cache_file is not None:
             access_token_cache_file = Path(access_token_cache_file)
         self._access_token_cache_file = access_token_cache_file
         self._host = host
         self.userinfo = None
 
+    def add_callbacks(self, callbacks: Callbacks) -> None:
+        self._callbacks.append(callbacks)
+
+    def _emit_on_authenticate(self, b: bool):
+        for cb in self._callbacks:
+            cb.on_authenticate(b)
+
+    def _emit_on_logout(self):
+        for cb in self._callbacks:
+            cb.on_logout()
 
     def _save_access_token(self, access_token:str):
         if self._access_token_cache_file is None:
@@ -38,12 +69,17 @@ class PyKitsu:
         with self._access_token_cache_file.open() as fp:
             return json.load(fp)
 
+    def clear_access_token_cache(self):
+        if self._access_token_cache_file is not None and self._access_token_cache_file.exists():
+            self._access_token_cache_file.unlink()
+
     async def _on_connect(self, client:_client.ApiClient, userinfo:Person):
         print('Caching User info...')
         self.userinfo = userinfo
         self.projects = _client.ProjectsApi(client)
         self.assets = _client.AssetsApi(client)
         self.exports = _client.ExportApi(client)
+        self.logout = _LogOutCommand(self, client)
 
     async def _on_disconnect(self, client:_client.ApiClient):
         await client.close()
@@ -64,7 +100,9 @@ class PyKitsu:
             data = json.loads(info.raw_data)
             userinfo = Person.from_dict(data['user'])
             if userinfo is None:
+                self._emit_on_authenticate(False)
                 raise ValueError('Could not read userinfo on after authentication!')
+            self._emit_on_authenticate(True)
 
             try:
                 await self._on_connect(client, userinfo)
@@ -103,7 +141,9 @@ class PyKitsu:
 
             userinfo = Person.from_dict(data['user'])
             if userinfo is None:
+                self._emit_on_authenticate(False)
                 raise ValueError('Could not read userinfo on after user login!')
+            self._emit_on_authenticate(True)
 
             try:
                 await self._on_connect(client, userinfo)

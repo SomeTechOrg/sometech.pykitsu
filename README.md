@@ -43,6 +43,18 @@ async with kitsu.connected_user(
 ):
     print(kitsu.userinfo)
 
+# 5) To delete the access token while connected:
+async with kitsu.connected_user(
+    email=your_email, 
+    password=your_password, 
+    use_access_cache=False
+):
+    print(kitsu.userinfo)
+    kitsu.logout()
+
+# 6) To delete a saved access token without connecting first:
+kitsu.clear_access_token_cache()
+
 # 
 # Sign in with an api key:
 # 
@@ -78,6 +90,34 @@ async with kitsu.connected_XXX(...): # choose your connection style...
 
     print('Fetching timesheets...')
     csv = await kitsu.exports.export_time_spents_csv()
+
+```
+
+## Integrating to your app / event loop
+
+When using pykitsu in an app, you may need to be notified when some event occurs.
+This is handled by defining custom `Callbacks` and adding them on a `PyKitsu` instance.
+
+```python
+
+from sometech.pykitsu import PyKitsu, Callbacks
+from my_app import MyApp  # <- let's say this is your amazing app
+
+class MyCallbacks(Callbacks):
+    def __init__(self, my_app:MyApp):
+        self.my_app = my_app
+        
+    def on_authenticate(self, autenticated: bool):
+        self.my_app.notify('Conneted! ✊🌟')
+
+    def on_logout(self):
+        self.my_app('Disconneted! 👋🪩')
+
+kitsu = PyKitsu(host=host)
+kitsu.add_callbacks()
+
+# et voilà !
+# Your app will display a notification when pykitsy authenticates or logs out.
 
 ```
 
