@@ -11,7 +11,7 @@ from ._client.models.person import Person
 
 
 class Callbacks:
-    def on_authenticate(self, autenticated: bool):
+    def on_authenticate(self, authenticated: bool):
         pass
 
     def on_logout(self):
@@ -24,6 +24,7 @@ class _LogOutCommand:
 
     async def __call__(self):
         await self._pykitsu._on_disconnect(self._client)
+        self._pykitsu.userinfo = None
         self._pykitsu.clear_access_token_cache()
         self._pykitsu._emit_on_logout()
 
@@ -80,13 +81,17 @@ class PyKitsu:
         self.assets = _client.AssetsApi(client)
         self.exports = _client.ExportApi(client)
         self.logout = _LogOutCommand(self, client)
+        self._emit_on_authenticate(True)
 
     async def _on_disconnect(self, client:_client.ApiClient):
         await client.close()
-        self.userinfo = None
+        # self.userinfo = None
         # self.projects = None
         # self.assets = None
         # self.exports = None
+
+    def can_reconnect(self) -> bool:
+        return self._access_token_cache_file is not None and self._access_token_cache_file.exists()
 
     @asynccontextmanager
     async def connected_bot(self, api_key:str):
@@ -102,7 +107,6 @@ class PyKitsu:
             if userinfo is None:
                 self._emit_on_authenticate(False)
                 raise ValueError('Could not read userinfo on after authentication!')
-            self._emit_on_authenticate(True)
 
             try:
                 await self._on_connect(client, userinfo)
@@ -143,7 +147,6 @@ class PyKitsu:
             if userinfo is None:
                 self._emit_on_authenticate(False)
                 raise ValueError('Could not read userinfo on after user login!')
-            self._emit_on_authenticate(True)
 
             try:
                 await self._on_connect(client, userinfo)
@@ -151,6 +154,9 @@ class PyKitsu:
             finally:
                 await self._on_disconnect(client)
 
+    @property
+    def authenticated(self) -> bool:
+        return self.userinfo is not None
 
 async def usage():
     host = 'https://lola.kitsu.andarta-pictures.com/api'
