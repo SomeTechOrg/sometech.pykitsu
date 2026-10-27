@@ -680,7 +680,7 @@ __all__ = [
 ]
 
 # import apis into sdk package
-# from sometech.pykitsu._client.api.assets_api import AssetsApi as AssetsApi
+from sometech.pykitsu._client.api.assets_api import AssetsApi as AssetsApi
 from sometech.pykitsu._client.api.authentication_api import AuthenticationApi as AuthenticationApi
 # from sometech.pykitsu._client.api.breakdown_api import BreakdownApi as BreakdownApi
 # from sometech.pykitsu._client.api.chat_api import ChatApi as ChatApi
@@ -691,7 +691,7 @@ from sometech.pykitsu._client.api.authentication_api import AuthenticationApi as
 # from sometech.pykitsu._client.api.edits_api import EditsApi as EditsApi
 # from sometech.pykitsu._client.api.entities_api import EntitiesApi as EntitiesApi
 # from sometech.pykitsu._client.api.events_api import EventsApi as EventsApi
-# from sometech.pykitsu._client.api.export_api import ExportApi as ExportApi
+from sometech.pykitsu._client.api.export_api import ExportApi as ExportApi
 # from sometech.pykitsu._client.api.files_api import FilesApi as FilesApi
 # from sometech.pykitsu._client.api.import_api import ImportApi as ImportApi
 # from sometech.pykitsu._client.api.index_api import IndexApi as IndexApi
@@ -700,7 +700,7 @@ from sometech.pykitsu._client.api.authentication_api import AuthenticationApi as
 # from sometech.pykitsu._client.api.playlists_api import PlaylistsApi as PlaylistsApi
 # from sometech.pykitsu._client.api.previews_api import PreviewsApi as PreviewsApi
 # from sometech.pykitsu._client.api.project_templates_api import ProjectTemplatesApi as ProjectTemplatesApi
-# from sometech.pykitsu._client.api.projects_api import ProjectsApi as ProjectsApi
+from sometech.pykitsu._client.api.projects_api import ProjectsApi as ProjectsApi
 # from sometech.pykitsu._client.api.search_api import SearchApi as SearchApi
 # from sometech.pykitsu._client.api.shots_api import ShotsApi as ShotsApi
 # from sometech.pykitsu._client.api.tasks_api import TasksApi as TasksApi

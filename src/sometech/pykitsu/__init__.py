@@ -6,8 +6,16 @@ from pathlib import Path
 
 from rich import print
 
+import time
+t = time.time()
 from . import _client
+total = time.time()-t
+print(f'---> PyKitsu._client import time: {total:0.4f}')
+
+t = time.time()
 from ._client.models.person import Person
+total = time.time()-t
+print(f'---> PyKitsu._client.models.person import time: {total:0.4f}')
 
 
 class Callbacks:
@@ -166,7 +174,7 @@ async def usage():
 
     kitsu = PyKitsu(host=host, access_token_cache_file='/tmp/test_pykitsu/atcp.json')
 
-    if 1:
+    if 0:
         async with kitsu.connected_user(email=email, password=password):
             print( kitsu.userinfo)
 
