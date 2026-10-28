@@ -18,6 +18,12 @@ total = time.time()-t
 print(f'---> PyKitsu._client.models.person import time: {total:0.4f}')
 
 
+class KitsuConnectionError(ValueError):
+    pass
+
+class KitsuReconnectError(KitsuConnectionError):
+    pass
+
 class Callbacks:
     def on_authenticate(self, authenticated: bool):
         pass
@@ -43,6 +49,9 @@ class PyKitsu:
     exports : _client.ExportApi
     logout : _LogOutCommand
 
+    # Handy access to exceptions:
+    KistuConnectionError = KitsuConnectionError
+    KitsuReconnectError = KitsuReconnectError
 
     def __init__(self, host:str, access_token_cache_file: Path | str|None):
         self._callbacks: list[Callbacks] = []
@@ -114,7 +123,7 @@ class PyKitsu:
             userinfo = Person.from_dict(data['user'])
             if userinfo is None:
                 self._emit_on_authenticate(False)
-                raise ValueError('Could not read userinfo on after authentication!')
+                raise KitsuConnectionError('Could not read userinfo on after authentication!')
 
             try:
                 await self._on_connect(client, userinfo)
@@ -134,16 +143,17 @@ class PyKitsu:
                         return
 
         if email is None or  password is None:
-            raise ValueError('Could not connect: Could not used token cache but email/password not provided.')
+            raise KitsuReconnectError('Could not REconnect Kitsu and email/password not provided. Please Log In again.')
 
         configuration = _client.Configuration(host=self._host)
         configuration.username = email
         configuration.password = password
 
         async with _client.ApiClient(configuration) as client:
+            from sometech.pykitsu._client.models.login_user_request import LoginUserRequest  # noqa: I001
             print('Signin user in...')
             response = await _client.AuthenticationApi(client).login_user_with_http_info(
-                _client.LoginUserRequest(
+                LoginUserRequest(
                     email=configuration.username,
                     password=configuration.password,  # pyright: ignore[reportArgumentType]
                 ),
@@ -154,7 +164,7 @@ class PyKitsu:
             userinfo = Person.from_dict(data['user'])
             if userinfo is None:
                 self._emit_on_authenticate(False)
-                raise ValueError('Could not read userinfo on after user login!')
+                raise KitsuConnectionError('Could not read userinfo on after user login!')
 
             try:
                 await self._on_connect(client, userinfo)
