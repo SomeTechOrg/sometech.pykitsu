@@ -1,0 +1,52 @@
+# Manual fixes applied by codegen/generate.py on top of spec/openapi.json.
+# Keys are "METHOD /path" exactly as in the spec.
+
+# Rename a generated method.
+[names]
+"GET /data/shots/all" = "get_all_shots"
+"GET /data/assets/all" = "get_all_assets"
+"GET /data/edits/all" = "get_all_edits"
+"POST /actions/projects/{project_id}/tasks/comment-many" = "comment_several_tasks_of_project"
+"POST /actions/tasks/batch-comment" = "comment_several_tasks"
+"POST /data/softwares" = "create_software"
+"GET /data/softwares" = "get_software_rows"
+"DELETE /data/softwares/{instance_id}" = "delete_software"
+"PUT /data/softwares/{instance_id}" = "update_software"
+"POST /data/output-files" = "create_output_file"
+"GET /data/output-files" = "get_output_file_rows"
+"POST /data/output-types" = "create_output_type"
+"GET /data/output-types" = "get_output_type_rows"
+"DELETE /data/output-types/{instance_id}" = "delete_output_type"
+"PUT /data/output-types/{instance_id}" = "update_output_type"
+"POST /data/events" = "create_api_event"
+"GET /data/events" = "get_api_event_rows"
+"POST /data/salary-scales" = "create_salary_scale"
+"GET /data/salary-scales" = "get_salary_scale_rows"
+"POST /data/entities/guess-from-path" = "guess_entity_from_file_path"
+"POST /data/entities/guess_from_path" = "guess_entity_from_file_path_legacy"
+"POST /import/shotgun/project-connections" = "import_shotgun_team_members"
+"POST /import/shotgun/projectconnections" = "import_shotgun_team_members_legacy"
+"POST /import/shotgun/remove/project-connection" = "remove_shotgun_team_member"
+"POST /import/shotgun/remove/projectconnection" = "remove_shotgun_team_member_legacy"
+"GET /data/projects/{project_id}/news" = "get_news_of_project"
+"GET /data/projects/{project_id}/news/{news_id}" = "get_news_item_of_project"
+"POST /pictures/thumbnails/organisations/{instance_id}" = "upload_thumbnail_of_organisation"
+"GET /pictures/thumbnails/organisations/{instance_id}" = "get_thumbnail_of_organisation"
+"POST /pictures/thumbnails/organisations/{instance_id}.png" = "upload_thumbnail_of_organisation_png"
+"GET /pictures/thumbnails/organisations/{instance_id}.png" = "get_thumbnail_of_organisation_png"
+"POST /pictures/thumbnails/persons/{instance_id}" = "upload_thumbnail_of_person"
+"GET /pictures/thumbnails/persons/{instance_id}" = "get_thumbnail_of_person"
+"POST /pictures/thumbnails/persons/{instance_id}.png" = "upload_thumbnail_of_person_png"
+"GET /pictures/thumbnails/persons/{instance_id}.png" = "get_thumbnail_of_person_png"
+"POST /pictures/thumbnails/projects/{instance_id}" = "upload_thumbnail_of_project"
+"GET /pictures/thumbnails/projects/{instance_id}" = "get_thumbnail_of_project"
+"GET /pictures/thumbnails/projects/{instance_id}.png" = "get_thumbnail_of_project_png"
+"GET /data/user/sequences/{sequence_id}/task-types/{task_type_id}/subscribed" = "check_my_subscription_to_sequence"
+"GET /data/user/entities/{sequence_id}/task-types/{task_type_id}/subscribed" = "check_my_subscription_to_entity"
+
+# Force the return type of a JSON route (a component model name, or list[Name]).
+[responses]
+# "GET /data/projects/open" = "list[Project]"
+
+# Move a route to another group (snake/pascal names are derived from the tag).
+[groups]
